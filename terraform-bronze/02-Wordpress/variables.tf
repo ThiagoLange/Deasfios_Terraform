@@ -18,3 +18,15 @@ variable "region" {
 
 variable "do_token" {
 }
+
+variable "size_mysql" {
+  type        = string
+  default     = "db-s-1vcpu-1gb"
+  description = "Modelo Size do cluster DB mysql na Digital Ocean"
+}
+
+variable "engine" {
+  type        = string
+  default     = "mysql"
+  description = "Engine do cluster DB mysql na Digital Ocean"
+}
