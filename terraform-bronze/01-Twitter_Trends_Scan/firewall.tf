@@ -5,7 +5,7 @@ resource "digitalocean_firewall" "firewall" {
   inbound_rule {
     protocol         = "tcp"
     port_range       = "22"
-    source_addresses = ["0.0.0.0/0", "::/0"]
+    source_addresses = ["239.13.117.114/32", "::/0"]
   }
 
   inbound_rule {
@@ -29,7 +29,7 @@ resource "digitalocean_firewall" "firewall" {
   outbound_rule {
     protocol              = "tcp"
     port_range            = "22"
-    destination_addresses = ["0.0.0.0/0", "::/0"]
+    destination_addresses = ["239.13.117.114/32", "::/0"]
   }
 
   outbound_rule {
