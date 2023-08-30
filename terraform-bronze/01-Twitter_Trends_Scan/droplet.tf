@@ -3,6 +3,6 @@ resource "digitalocean_droplet" "vm_droplet" {
   name     = "vm-twitter"
   region   = var.region
   size     = var.size
-  ssh_keys = [data.digitalocean_ssh_key.ssh_key.id]
+  ssh_keys = [digitalocean_ssh_key.ssh.fingerprint]
   vpc_uuid = digitalocean_vpc.vpc_twitter.id
 }

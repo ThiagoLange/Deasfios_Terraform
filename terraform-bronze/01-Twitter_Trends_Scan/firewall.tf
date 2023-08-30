@@ -1,5 +1,5 @@
 resource "digitalocean_firewall" "firewall" {
-  name = "firewall-role-twitter"
+  name        = "firewall-role-twitter"
   droplet_ids = [digitalocean_droplet.vm_droplet.id]
 
   inbound_rule {
