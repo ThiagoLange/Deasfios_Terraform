@@ -5,6 +5,7 @@ resource "digitalocean_database_cluster" "postgres-crm" {
   size       = var.size_db
   region     = var.region
   node_count = 1
+  private_network_uuid = digitalocean_vpc.vpc_crm.id
 }
 
 resource "digitalocean_database_firewall" "database-firewall" {
