@@ -11,14 +11,14 @@ resource "digitalocean_loadbalancer" "public" {
     target_protocol = "http"
   }
 
- #   healthcheck {
- #     port     = 22
- #     protocol = "tcp"
- #   }
+  healthcheck {
+    port     = 22
+    protocol = "tcp"
+  }
 
- #   firewall {
- #     allow = ["cidr:239.13.117.114/32"] #"ip:239.13.117.114/32"
- #   }
+  firewall {
+    allow = ["cidr:0.0.0.0/0", "::/0"]
+  }
 
   droplet_ids = [digitalocean_droplet.vm_frontend1.id, digitalocean_droplet.vm_frontend2.id]
 }
