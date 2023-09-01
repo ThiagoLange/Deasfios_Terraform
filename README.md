@@ -8,9 +8,16 @@ Repositório de resolução dos Desafios do Terraform.
 
 ### terraform-bronze
 
-### Projeto 01
+### Projetos
 
 01-Twitter_Trends_Scan
+02-Wordpress
+03-CRM
+04-CRM-HA
+
+## terraform-prata
+
+
 
 
 
