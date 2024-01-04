@@ -1,9 +1,9 @@
 output "droplet_ip-control" {
-  value = digitalocean_droplet.control_plane.ipv4_address
+  value = digitalocean_droplet.control-plane[*].ipv4_address
 }
 
 output "droplet_ip_private-control" {
-  value = digitalocean_droplet.control_plane.ipv4_address_private
+  value = digitalocean_droplet.control-plane[*].ipv4_address_private
 }
 
 output "droplet_ip-node" {
@@ -15,7 +15,7 @@ output "droplet_ip_private-node" {
 }
 
 output "droplet_name-control" {
-  value = digitalocean_droplet.control_plane.name
+  value = digitalocean_droplet.control-plane[*].name
 }
 
 output "droplet_name-node" {

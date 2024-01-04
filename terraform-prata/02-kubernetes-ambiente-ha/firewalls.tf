@@ -1,7 +1,7 @@
-# Criação do Firewall para a VM Control Node
+# Criação do Firewall para as VMs Control Node
 resource "digitalocean_firewall" "firewall_cp" {
   name        = "firewall-role-cp"
-  droplet_ids = [digitalocean_droplet.control_plane.id]
+  droplet_ids = digitalocean_droplet.control-plane[*].id
 
   inbound_rule {
     protocol         = "tcp"
@@ -99,10 +99,9 @@ resource "digitalocean_firewall" "firewall_cp" {
     destination_addresses = ["0.0.0.0/0", "::/0"]
   }
 
-
 }
 
-# Criação do Firewall para a VM Worker Nodes
+# Criação do Firewall para as VMs Worker Nodes
 resource "digitalocean_firewall" "firewall_wn" {
   name        = "firewall-role-wn"
   droplet_ids = digitalocean_droplet.worker-node[*].id
